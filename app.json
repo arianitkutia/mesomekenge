@@ -31,6 +31,12 @@
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "f92c2239-8c4c-4cfe-a4f8-ed666a11a304"
+      }
+    },
+    "owner": "alternativeeducation"
   }
 }
