@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "Mëso shqip përmes këngëve",
+    "slug": "gaga-songbook",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0001BD"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gaga.songbook",
+      "buildNumber": "1"
+    },
+    "android": {
+      "package": "com.gaga.songbook",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/icon.png",
+        "backgroundColor": "#FBF7EF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/images/icon.png"
+    },
+    "plugins": [
+      "expo-font"
+    ]
+  }
+}
