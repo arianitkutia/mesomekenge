@@ -26,3 +26,7 @@ google-services.json
 # logs
 npm-debug.*
 yarn-error.*
+
+# screenshot working output
+store/screenshots/out/
+store/screenshots/.venv/
