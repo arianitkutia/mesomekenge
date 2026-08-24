@@ -38,7 +38,7 @@ An interactive **React Native (Expo)** songbook app that helps Albanian diaspora
 - **Contents screen (Permbajtja)** listing every song grouped by collection, so any of the 30+ songs can be reached in one tap.
 - **Previous / Next buttons** ("Prapa" / "Para") to flip through songs in order.
 - **Home button** (cover) and a **list button** (back to Contents) in the top bar.
-- **Song counter** (e.g. `12 / 36`) and the current collection name shown in the header.
+- **Song counter** (e.g. `12 / 34`) and the current collection name shown in the header.
 
 ### Song Pages
 Each song page adapts to the content it has:
@@ -62,12 +62,12 @@ Each song page adapts to the content it has:
 
 ## Content
 
-The book contains **36 songs** organized into **4 collections**:
+The book contains **34 songs** organized into **4 collections**:
 
 | Collection | Songs |
 |------------|-------|
 | Shtatë Këngë | 6 |
-| Dhjetë Këngë | 10 |
+| Dhjetë Këngë | 8 |
 | Pesëmbëdhjetë Këngë | 15 |
 | Këngë Viti i Ri | 5 |
 
