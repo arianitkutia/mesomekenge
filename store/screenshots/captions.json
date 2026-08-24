@@ -1,6 +1,6 @@
 [
   { "file": "01-cover.png",    "caption": "Mëso shqip përmes këngëve", "bg": ["#2A2AE0", "#0001BD"] },
-  { "file": "02-home.png",     "caption": "36 këngë me ngjyra",        "bg": ["#FF8E5E", "#EC6A8C"] },
+  { "file": "02-home.png",     "caption": "34 këngë me ngjyra",        "bg": ["#FF8E5E", "#EC6A8C"] },
   { "file": "03-song.png",     "caption": "Shiko, dëgjo dhe këndo",     "bg": ["#5FC7BE", "#2FA8A0"] },
   { "file": "04-words.png",    "caption": "Fjalë të reja çdo ditë",     "bg": ["#7BC97F", "#4CAE52"] },
   { "file": "05-activity.png", "caption": "Luaj dhe vizato",            "bg": ["#F4C24E", "#E8A020"] },

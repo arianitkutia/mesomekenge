@@ -30,3 +30,5 @@ yarn-error.*
 # screenshot working output
 store/screenshots/out/
 store/screenshots/.venv/
+store/screenshots/.cache/
+store/screenshots/.gen/
