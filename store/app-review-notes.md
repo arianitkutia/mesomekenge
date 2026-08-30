@@ -47,24 +47,16 @@ in the reply:
 
 ## 2. Devices and operating systems tested
 
-`‹Replace with what you actually tested on. Apple reviews on physical devices, so list at
-least one physical iPhone and — because supportsTablet is enabled — one physical iPad.›`
-
-Suggested format:
-
 ```
-Physical devices:
-• iPhone ‹model› — iOS ‹version›
-• iPad ‹model› — iPadOS ‹version›
-
-Simulators (secondary):
-• iPhone 17 Pro Max — iOS ‹version›
-• iPad Pro 13-inch (M4) — iPadOS ‹version›
+Physical device:
+• iPhone 15 Pro Max — iOS 26.6
 
 Minimum supported version: iOS 15.1 (Expo SDK 54 / React Native 0.81).
 ```
 
----
+`‹If you also tested on a physical iPad, add it here. See "iPad" below — with
+supportsTablet enabled Apple reviews on iPad too, and right now you would be telling them
+you never ran it on one.›`
 
 ## 3. What the app does and who it is for
 
@@ -168,12 +160,12 @@ All 34 song videos in the app are embedded from the YouTube channel
 "Ga Ga - Këngë për fëmijë" (https://www.youtube.com/@GaGa-Këngëpërfëmijë), which is owned
 and operated by us, Alternative Education LLC. No video from any other channel is used.
 
-The Albanian songs are our own adaptations of children's songs originally produced in
-English by LooLoo Kids, produced under licence from LooLoo Kids. Our licence is stated
-publicly on our website at https://gaga.al/rreth/ ("Ga Ga TV është e licensuar nga
-LooLoo Kids" — "Ga Ga TV is licensed by LooLoo Kids"). The signed licence agreement is
-attached. The Albanian lyrics were written by our team; the animation is produced by our
-studio.
+The Albanian songs are our own adaptations of children's programs originally produced in
+English, licensed to us by SC TRALALA STUDIO SRL (Romania) — the producer behind the
+LooLoo Kids catalogue — under Program Distribution Agreement No. 118 of 26 October 2020.
+The agreement and its amendments list the licensed programs in Exhibit B. Deed of
+Amendment no. 4, dated 28 June 2023 and signed by both parties, is attached. The Albanian
+lyrics were written by our team and the animation is produced by our studio.
 
 Videos are played through YouTube's official embedded IFrame player, as permitted by the
 YouTube Terms of Service. No video is downloaded, re-hosted, cached or redistributed by
@@ -187,9 +179,13 @@ is aimed at families; it is submitted under Education, not the Kids Category.
 ```
 
 **Attach as documentation:**
-1. The signed LooLoo Kids licence agreement — this is the document Apple's question is
-   actually aimed at. Do not reply without it.
-2. Evidence that the Ga Ga channel is yours: a YouTube Studio screenshot showing the
+1. `Amendment 4- Alternative Ed..pdf` — Deed of Amendment no. 4, signed by both parties.
+2. **The base agreement, No. 118 / 26.10.2020, and amendments 1–3.** These are not in
+   `documents/` and Amendment 4 alone does not contain the grant of rights — it only adds
+   41 programs to Exhibit B and refers back to the base agreement for everything else.
+   Apple asked you to *demonstrate you are authorized*; the base agreement is where that
+   authorization actually lives.
+3. Evidence that the Ga Ga channel is yours: a YouTube Studio screenshot showing the
    channel under your account, or https://gaga.al/rreth/ which names your team.
 
 ---
