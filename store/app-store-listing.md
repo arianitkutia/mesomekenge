@@ -153,7 +153,8 @@ Gjenerohen me `node store/screenshots/render.mjs` → `store/screenshots/out/`.
 | 7 | `07-prinderit.png` | Udhëzues i plotë për prindërit |
 
 - `out/iphone-6.9/` — 1320 × 2868 (iPhone 6.9", i detyrueshëm)
-- `out/ipad-13/` — 2064 × 2752 (iPad 13", i detyrueshëm sepse `supportsTablet: true`)
+Pamje iPad-i nuk kërkohen: `supportsTablet` është `false`, ndaj aplikacioni listohet
+vetëm për iPhone.
 
 Ngarkojini me të njëjtin rend në App Store Connect; pamja e parë është ajo që shihet
 në rezultatet e kërkimit.
@@ -199,10 +200,9 @@ Përgjigjja e plotë — të shtatë pikat, plus lista e xhirimit të videos —
 
    Opsioni i parë është më i pastër për një aplikacion fëmijësh.
 
-3. **iPad.** `supportsTablet: true` ju detyron të ngarkoni pamje 13", dhe aplikacioni
-   nuk ka ende pamje të përshtatur për tablet (kartelat dalin shumë të gjera dhe teksti
-   i vogël). Ose e pranoni ashtu siç është për lansimin e parë, ose vendosni
-   `supportsTablet: false` në `app.json` — atëherë nuk ju duhen fare pamje iPad-i.
+3. **iPad.** `supportsTablet` u vendos `false`, sepse aplikacioni nuk kishte pamje të
+   përshtatur për tablet. Aplikacioni listohet vetëm për iPhone dhe në iPad hapet në
+   modalitetin e përputhshmërisë. Pamje iPad-i nuk ju duhen.
 
 4. **Të drejtat e këngëve dhe të videove.** Tekstet e përshtatura dhe videot e
    ngulitura duhet t'i keni me leje ose të jenë tuajat; Apple mund t'i kërkojë provat.

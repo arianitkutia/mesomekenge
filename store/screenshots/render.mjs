@@ -9,8 +9,8 @@
 //   iPhone 6.9"  →  1320 × 2868   (out/iphone-6.9/)
 //   iPad 13"     →  2064 × 2752   (out/ipad-13/)
 //
-// Run:  node render.mjs            all devices
-//       node render.mjs iphone     one device
+// Run:  node render.mjs            the sizes the App Store requires (iPhone only)
+//       node render.mjs ipad       the iPad set, if supportsTablet is ever re-enabled
 import { chromium } from "playwright-core"
 import fs from "node:fs"
 import path from "node:path"
@@ -546,8 +546,10 @@ const page = (d, s) => `<!doctype html><html lang="sq"><head><meta charset="utf-
 
 // ----------------------------------------------------------------------- run
 
-const only = process.argv[2]
-const targets = Object.entries(DEVICES).filter(([k]) => !only || k.includes(only))
+// app.json sets supportsTablet:false, so App Store Connect no longer asks for iPad
+// screenshots. The iPad device stays defined and is still reachable by name.
+const only = process.argv[2] ?? "iphone"
+const targets = Object.entries(DEVICES).filter(([k]) => k.includes(only))
 if (!targets.length) { console.error(`no device matches "${only}"`); process.exit(1) }
 
 const browser = await chromium.launch({ executablePath: CHROME })

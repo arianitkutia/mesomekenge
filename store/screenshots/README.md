@@ -11,9 +11,9 @@ ri-ekzekutoni komandën.
 ## Ekzekutimi
 
 ```
-node render.mjs            # të gjitha pajisjet
+node render.mjs            # përmasat që kërkon App Store (vetëm iPhone)
 node render.mjs iphone     # vetëm iPhone
-node render.mjs ipad       # vetëm iPad
+node render.mjs ipad       # iPad, nëse `supportsTablet` rikthehet ndonjëherë
 ```
 
 Rezultati:
@@ -21,7 +21,7 @@ Rezultati:
 | Dosja | Përmasat | Pse duhet |
 |-------|----------|-----------|
 | `out/iphone-6.9/` | 1320 × 2868 | i detyrueshëm për çdo aplikacion |
-| `out/ipad-13/` | 2064 × 2752 | i detyrueshëm sa kohë `supportsTablet: true` |
+| `out/ipad-13/` | 2064 × 2752 | nuk kërkohet — `supportsTablet` është `false` |
 
 Shtatë pamje për pajisje, të renditura `01`…`07`. Ngarkojini me të njëjtin rend —
 pamja e parë është ajo që shfaqet te rezultatet e kërkimit.

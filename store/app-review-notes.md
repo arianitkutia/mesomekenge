@@ -54,10 +54,6 @@ Physical device:
 Minimum supported version: iOS 15.1 (Expo SDK 54 / React Native 0.81).
 ```
 
-`‹If you also tested on a physical iPad, add it here. See "iPad" below — with
-supportsTablet enabled Apple reviews on iPad too, and right now you would be telling them
-you never ran it on one.›`
-
 ## 3. What the app does and who it is for
 
 ```
@@ -192,7 +188,24 @@ is aimed at families; it is submitted under Education, not the Kids Category.
 
 # Before you reply
 
-### A. Two third-party songs were removed
+### A. The licence documents are not attached yet — this is the blocker
+The screen recordings are uploaded, but the agreement is not. Question 7 is the whole
+reason this came back: Apple asked you to *demonstrate you are authorized* to use
+protected third-party material, and right now the reply would assert a licence with
+nothing behind it.
+
+Attach, in this order:
+1. **Program Distribution Agreement No. 118 / 26.10.2020** — the base agreement. This is
+   the one that actually grants the rights. Without it the others prove nothing on their
+   own.
+2. Amendments 1–3.
+3. `Amendment 4- Alternative Ed..pdf`, already in `documents/`.
+
+If you cannot locate the base agreement, request a copy from SC TRALALA STUDIO SRL before
+replying. Answering question 7 with only Amendment 4 invites the same rejection a second
+time.
+
+### B. Two third-party songs were removed
 The previous build embedded two videos published directly by the LooLoo Kids channel —
 #7 “Përgatitja e kekut” and #16 “Zigalu”. Your licence covers Ga Ga's own Albanian
 productions; embedding LooLoo's original English uploads is a separate question you would
@@ -203,23 +216,17 @@ every “36” in the store copy, the site and the screenshot captions became 34
 Verified with the YouTube oEmbed API: all 34 remaining videos report
 `Ga Ga - Këngë për fëmijë` as the author.
 
-### B. Physical-device testing
+### C. Physical-device testing
 `eas.json` only defines simulator builds for the `development` and `preview` profiles.
 Apple states plainly that they review on physical devices. Install the production build on
-a real iPhone and a real iPad via TestFlight before you reply, and list those devices in
-§2 — otherwise you are answering a question about testing you have not actually done.
+a real iPhone via TestFlight before you reply, and list it in §2 — otherwise you are answering a question about testing you have not actually done.
 
-### C. Screenshot 1 is a risk under Guideline 2.3.3
+### D. Screenshot 1 is a risk under Guideline 2.3.3
 Apple's own “common issues” note in the rejection says screenshots must show the app in
 use and “not merely the title art, login page, or splash screen.” Screenshot `01-cover.png`
 is the cover screen — real app UI, but it reads as title art. Reorder the uploads so
 `02-kenget.png` (the song grid) is first, and either drop the cover shot or move it to the
 end. Change the order in App Store Connect; no re-render is needed.
-
-### D. iPad
-`supportsTablet: true` means Apple reviews on iPad too, and the app has no tablet-specific
-layout. If you would rather not defend that, set `supportsTablet: false` and resubmit —
-the iPad screenshots then become unnecessary as well.
 
 ### E. New build required
 Removing the two songs changes the binary, so this needs a fresh build and a new build
