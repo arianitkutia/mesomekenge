@@ -166,34 +166,43 @@ activities and drawing canvas for that song continue to work normally, including
 ```
 All 34 song videos in the app are embedded from the YouTube channel
 "Ga Ga - Këngë për fëmijë" (https://www.youtube.com/@GaGa-Këngëpërfëmijë), which is owned
-and operated by us. No video from any third-party channel is used.
+and operated by us, Alternative Education LLC. No video from any other channel is used.
+
+The Albanian songs are our own adaptations of children's songs originally produced in
+English by LooLoo Kids, produced under licence from LooLoo Kids. Our licence is stated
+publicly on our website at https://gaga.al/rreth/ ("Ga Ga TV është e licensuar nga
+LooLoo Kids" — "Ga Ga TV is licensed by LooLoo Kids"). The signed licence agreement is
+attached. The Albanian lyrics were written by our team; the animation is produced by our
+studio.
 
 Videos are played through YouTube's official embedded IFrame player, as permitted by the
 YouTube Terms of Service. No video is downloaded, re-hosted, cached or redistributed by
 the app, and no advertising is removed from it. Song artwork uses the standard YouTube
 thumbnail images for the same videos.
 
-The Albanian lyrics shown in the app are our own adaptations, written for this project.
-Where a song is adapted from a well-known children's song, the original title is shown as
-a subtitle. The cover artwork and the GaGa character are our own property.
+The cover artwork and the GaGa character are our own property.
 
 The app is not in a regulated industry. It collects no personal data, has no accounts and
 is aimed at families; it is submitted under Education, not the Kids Category.
 ```
 
-**Attach as documentation:** a YouTube Studio screenshot showing the Ga Ga channel signed
-in under your account, or the channel's About page naming Alternative Education LLC.
+**Attach as documentation:**
+1. The signed LooLoo Kids licence agreement — this is the document Apple's question is
+   actually aimed at. Do not reply without it.
+2. Evidence that the Ga Ga channel is yours: a YouTube Studio screenshot showing the
+   channel under your account, or https://gaga.al/rreth/ which names your team.
 
 ---
 
 # Before you reply
 
 ### A. Two third-party songs were removed
-The previous build embedded two videos from the LooLoo Kids channel — #7 “Përgatitja e
-kekut” and #16 “Zigalu”. Both songs have been removed from `lib/book-data.ts`; the app now
-ships 34 songs, all from your own channel. The remaining songs were renumbered 1–34 so the
-badges the child sees have no gaps. Every “36” in the store copy, the site and the
-screenshot captions was updated to 34.
+The previous build embedded two videos published directly by the LooLoo Kids channel —
+#7 “Përgatitja e kekut” and #16 “Zigalu”. Your licence covers Ga Ga's own Albanian
+productions; embedding LooLoo's original English uploads is a separate question you would
+have had to defend. Both songs have been removed, so the app now ships 34 songs, all from
+your own channel. The remaining songs were renumbered 1–34 so the badges have no gaps, and
+every “36” in the store copy, the site and the screenshot captions became 34.
 
 Verified with the YouTube oEmbed API: all 34 remaining videos report
 `Ga Ga - Këngë për fëmijë` as the author.

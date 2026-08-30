@@ -1,8 +1,11 @@
 # Terms & Conditions — Mëso shqip përmes këngëve
 
-**Effective date:** _[fill in before submission]_
-**Provider:** Alternative Education LLC _[confirm the exact legal entity name and address]_
-**Contact:** _[your support email]_
+**Effective date:** 23/08/2026
+**Provider:** Alternative Education LLC
+**Contact:** alternativeeducation.llc@gmail.com
+**Live at:** https://gaga.al/terms/
+
+> Jurisdiction is set to the Republic of Kosovo on the published page.
 
 > **Përmbledhje për prindërit (jo detyruese ligjërisht).** Aplikacioni është falas, pa
 > reklama dhe pa llogari. Përdoreni për familjen tuaj, në klasë ose në kopsht. Mos i

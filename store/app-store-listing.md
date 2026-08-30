@@ -168,10 +168,11 @@ në rezultatet e kërkimit.
 | **Kategoria dytësore** | Books (opsionale) |
 | **Age Rating** | Pritet 4+ — plotësoni pyetësorin; asnjë përgjigje “po” |
 | **Copyright** | `2026 Alternative Education LLC` |
-| **Support URL** | _[faqe me kontaktin tuaj — p.sh. GitHub Pages te `store/site/`]_ |
-| **Marketing URL** | _opsionale_ |
-| **Privacy Policy URL** | _[hostoni `store/site/privacy.html`]_ |
-| **License Agreement (EULA)** | Custom EULA — ngjiteni `store/terms.md` te App Information → License Agreement, ose lëreni EULA-n standarde të Apple dhe mbajeni `store/site/terms.html` si faqe publike |
+| **Support URL** | `https://gaga.al/rreth/` — ka seksionin “Na Kontaktoni” |
+| **Marketing URL** | `https://gaga.al/` (opsionale) |
+| **Privacy Policy URL** | `https://gaga.al/privacy-policy/` |
+| **License Agreement (EULA)** | Custom EULA — `https://gaga.al/terms/` është faqja publike; ngjitni tekstin te App Information → License Agreement |
+| **Contact email** | `alternativeeducation.llc@gmail.com` |
 | **Çmimi** | Falas, pa blerje brenda aplikacionit |
 | **Encryption** | Deklaruar tashmë: `ITSAppUsesNonExemptEncryption: false` në `app.json` |
 
