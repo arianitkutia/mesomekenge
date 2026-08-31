@@ -60,10 +60,13 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <StatusBar style="dark" />
+      <StatusBar style={page === "cover" ? "light" : "dark"} />
       <View style={styles.root}>
         <LinearGradient colors={colors.backgroundGradient} style={StyleSheet.absoluteFill} />
-        <SafeAreaView style={styles.safe} edges={["top", "bottom"]}>
+        {/* The cover runs edge to edge on the splash blue; every other page keeps
+            the cream gradient and its safe-area insets. */}
+        {page === "cover" && <View style={[StyleSheet.absoluteFill, styles.coverFill]} />}
+        <SafeAreaView style={styles.safe} edges={page === "cover" ? [] : ["top", "bottom"]}>
           {/* Header */}
           {page !== "cover" && (
             <View style={styles.header}>
@@ -156,6 +159,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   root: { flex: 1, backgroundColor: colors.background },
+  coverFill: { backgroundColor: colors.cover },
   safe: { flex: 1 },
   header: {
     flexDirection: "row",

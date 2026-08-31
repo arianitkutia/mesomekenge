@@ -41,6 +41,7 @@ const dataUri = (file, mime) =>
   `data:${mime};base64,${fs.readFileSync(file).toString("base64")}`
 
 const coverImg = dataUri(path.join(ROOT, "assets/images/cover.jpg"), "image/jpeg")
+const splashImg = dataUri(path.join(ROOT, "assets/images/splash.png"), "image/png")
 const localImg = (name) => dataUri(path.join(ROOT, "assets/images", name), "image/jpeg")
 
 // Real Ionicons, so every glyph matches the shipped app exactly.
@@ -193,24 +194,13 @@ const songCard = (song) => {
 const SONG = songs.find((s) => s.id === 2)          // Detari në det — blue palette
 const T = songThemes[SONG.palette]
 
-const coverScreen = () => `
+const coverScreen = (d) => `
   <div class="scr cover">
-    <div class="coverHero">
-      ${icon("musical-note", 30, songThemes.instrument.accent, "position:absolute;opacity:.55;top:8%;left:14%")}
-      ${icon("star", 26, songThemes.movement.accent, "position:absolute;opacity:.55;top:14%;right:16%")}
-      ${icon("heart", 22, songThemes.coral.accent, "position:absolute;opacity:.55;top:40%;left:8%")}
-      ${icon("musical-notes", 28, songThemes.grape.accent, "position:absolute;opacity:.55;top:44%;right:9%")}
-      ${icon("sparkles", 22, songThemes.movement.accent, "position:absolute;opacity:.55;top:2%;right:38%")}
-      <div class="haloWrap">
-        <div class="halo" style="background:${grad(...songThemes.movement.gradient)}"></div>
-        <div class="ring"><img src="${coverImg}"/></div>
-      </div>
+    <div class="artWrap"><img class="splashArt" src="${splashImg}"/></div>
+    <div class="coverFooter" style="padding-bottom:${d.inset.bottom + 24}px">
+      <div class="agePill">${icon("happy", 15, "#fff")}<span>Mosha 2–6 vjeç</span></div>
+      <div class="startBtn">${icon("play", 22, "#fff")}<span>Fillo</span></div>
     </div>
-    <div class="coverTitleBlock">
-      <div class="coverTitle">Mëso shqip përmes këngëve</div>
-      <div class="agePill">${icon("happy", 15, colors.accent)}<span>Mosha 2–6 vjeç</span></div>
-    </div>
-    <div class="startBtn">${icon("play", 22, "#fff")}<span>Fillo</span></div>
   </div>`
 
 const contentsScreen = (d) => `
@@ -354,7 +344,7 @@ const parentsScreen = () => {
 }
 
 const SCREENS = [
-  { file: "01-cover", caption: "34 këngë shqip për fëmijë 2–6 vjeç", bg: ["#3B3BE8", "#0001BD"], render: () => coverScreen() },
+  { file: "01-cover", caption: "34 këngë shqip për fëmijë 2–6 vjeç", bg: ["#3B3BE8", "#0001BD"], render: (d) => coverScreen(d) },
   { file: "02-kenget", caption: "Zgjidh një këngë dhe këndo", bg: ["#FF8E5E", "#EC6A8C"], render: (d) => contentsScreen(d) },
   { file: "03-kenga", caption: "Shiko videon dhe këndo bashkë", bg: ["#69ABDC", "#3B86C9"], render: () => songScreenBase("lyrics", lyricsPanel()) },
   { file: "04-fjale", caption: "Fjalë të reja në çdo këngë", bg: ["#7BC97F", "#4CAE52"], render: (d) => songScreenBase("words", wordsPanel(), { scroll: d.songScroll.words, tabShift: d.tabScroll ? 24 : 0 }) },
@@ -420,16 +410,13 @@ const css = (d) => {
              font-size:14px; font-weight:800; color:${colors.mutedForeground}; }
 
   /* ---- BookCover ---- */
-  .cover { align-items:center; justify-content:center; gap:24px; padding-left:24px; padding-right:24px; }
-  .coverHero { width:100%; height:340px; display:flex; align-items:center; justify-content:center; position:relative; }
-  .haloWrap { width:260px; height:260px; display:flex; align-items:center; justify-content:center; position:relative; }
-  .halo { position:absolute; width:260px; height:260px; border-radius:999px; opacity:.28; transform:scale(1.12); }
-  .ring { width:260px; height:260px; border-radius:999px; padding:8px; background:${colors.card}; box-shadow:${shadow.lg}; }
-  .ring img { width:100%; height:100%; border-radius:999px; object-fit:cover; }
-  .coverTitleBlock { display:flex; flex-direction:column; align-items:center; gap:8px; }
-  .coverTitle { font-size:33px; line-height:39px; font-weight:800; text-align:center; letter-spacing:-0.5px; }
-  .agePill { display:flex; align-items:center; gap:4px; margin-top:4px; padding:4px 12px; border-radius:999px;
-             background:${colors.card}; box-shadow:${shadow.sm}; font-size:14px; font-weight:700; }
+  .cover { padding:0; background:${colors.cover}; }
+  .artWrap { flex:1; position:relative; min-height:0; }
+  .splashArt { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; }
+  .coverFooter { display:flex; flex-direction:column; align-items:center; gap:12px;
+                 padding-top:12px; }
+  .agePill { display:flex; align-items:center; gap:4px; padding:4px 12px; border-radius:999px;
+             background:rgba(255,255,255,.18); font-size:14px; font-weight:700; color:#fff; }
   .startBtn { display:flex; align-items:center; gap:8px; padding:16px 32px; border-radius:999px;
               background:${grad(colors.primary, "#3E9A44")}; color:#fff; font-size:20px; font-weight:800;
               box-shadow:${shadow.md}; }

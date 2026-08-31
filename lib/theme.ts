@@ -14,6 +14,8 @@ export const colors = {
   secondaryForeground: "#37291D",
   accent: "#F2A33C",
   accentForeground: "#37291D",
+  /** Cover screen and native splash share this blue, so launch flows into the app. */
+  cover: "#0001BD",
 } as const
 
 // Each song adopts one colour identity so the pages feel distinct.
