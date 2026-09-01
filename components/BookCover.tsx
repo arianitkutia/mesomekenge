@@ -8,72 +8,58 @@ interface BookCoverProps {
   onStart: () => void
 }
 
-// The cover shows the same artwork as the native splash, at the same size and on
-// the same blue, so the launch screen appears to stay put while the app takes over.
-// Everything the child needs to act on sits below it.
+// The cover is the native splash artwork, full screen, with the one control a child
+// needs sitting on top of it. `contain` keeps the wordmark from being cropped on tall
+// screens; the letterbox bands are invisible because they are the artwork's own blue.
 export function BookCover({ onStart }: BookCoverProps) {
   const insets = useSafeAreaInsets()
 
   return (
     <View style={styles.container}>
-      {/* The artwork is contained in the space left over above the controls, so the
-          Fillo button can never land on top of it however tall the screen is. */}
-      <View style={styles.artWrap}>
-        <Image
-          source={require("@/assets/images/splash.png")}
-          style={StyleSheet.absoluteFill}
-          resizeMode="contain"
-          accessibilityLabel="Mëso shqip përmes këngëve — këngë për fëmijë 2–6 vjeç"
-        />
-      </View>
+      <Image
+        source={require("@/assets/images/splash.png")}
+        style={StyleSheet.absoluteFill}
+        resizeMode="contain"
+        accessibilityLabel="Mëso shqip përmes këngëve — këngë për fëmijë 2–6 vjeç"
+      />
 
-      <View style={[styles.footer, { paddingBottom: insets.bottom + spacing.xl }]}>
-        <View style={styles.agePill}>
-          <Ionicons name="happy" size={15} color="#FFFFFF" />
-          <Text style={styles.ageText}>Mosha 2–6 vjeç</Text>
-        </View>
+      {/* Fades the foot of the artwork into the brand blue so the button always has a
+          clean field to sit on, whatever the screen aspect crops to. */}
+      <LinearGradient
+        colors={["rgba(0,1,188,0)", "rgba(0,1,188,0.92)", colors.cover]}
+        locations={[0, 0.55, 1]}
+        style={styles.scrim}
+        pointerEvents="none"
+      />
 
-        <Pressable
-          onPress={onStart}
-          accessibilityRole="button"
-          accessibilityLabel="Fillo"
-          style={({ pressed }) => [styles.buttonWrap, pressed && styles.buttonPressed]}
+      <Pressable
+        onPress={onStart}
+        accessibilityRole="button"
+        accessibilityLabel="Fillo"
+        style={({ pressed }) => [
+          styles.buttonWrap,
+          { bottom: insets.bottom + spacing.xxl },
+          pressed && styles.buttonPressed,
+        ]}
+      >
+        <LinearGradient
+          colors={[colors.primary, "#3E9A44"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }}
+          style={styles.button}
         >
-          <LinearGradient
-            colors={[colors.primary, "#3E9A44"]}
-            start={{ x: 0, y: 0 }}
-            end={{ x: 1, y: 1 }}
-            style={styles.button}
-          >
-            <Ionicons name="play" size={22} color={colors.primaryForeground} />
-            <Text style={styles.buttonText}>Fillo</Text>
-          </LinearGradient>
-        </Pressable>
-      </View>
+          <Ionicons name="play" size={22} color={colors.primaryForeground} />
+          <Text style={styles.buttonText}>Fillo</Text>
+        </LinearGradient>
+      </Pressable>
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: colors.cover },
-  artWrap: { flex: 1 },
-  footer: {
-    alignItems: "center",
-    gap: spacing.md,
-    paddingTop: spacing.md,
-    paddingHorizontal: spacing.xl,
-  },
-  agePill: {
-    flexDirection: "row",
-    alignItems: "center",
-    gap: spacing.xs,
-    paddingHorizontal: spacing.md,
-    paddingVertical: spacing.xs,
-    borderRadius: radius.full,
-    backgroundColor: "rgba(255,255,255,0.18)",
-  },
-  ageText: { fontSize: fontSize.sm, fontWeight: "700", color: "#FFFFFF" },
-  buttonWrap: { borderRadius: radius.full, ...shadow.md },
+  scrim: { position: "absolute", left: 0, right: 0, bottom: 0, height: "32%" },
+  buttonWrap: { position: "absolute", alignSelf: "center", borderRadius: radius.full, ...shadow.lg },
   buttonPressed: { opacity: 0.9, transform: [{ scale: 0.97 }] },
   button: {
     flexDirection: "row",

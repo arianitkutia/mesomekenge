@@ -196,10 +196,10 @@ const T = songThemes[SONG.palette]
 
 const coverScreen = (d) => `
   <div class="scr cover">
-    <div class="artWrap"><img class="splashArt" src="${splashImg}"/></div>
-    <div class="coverFooter" style="padding-bottom:${d.inset.bottom + 24}px">
-      <div class="agePill">${icon("happy", 15, "#fff")}<span>Mosha 2–6 vjeç</span></div>
-      <div class="startBtn">${icon("play", 22, "#fff")}<span>Fillo</span></div>
+    <img class="splashArt" src="${splashImg}"/>
+    <div class="coverScrim"></div>
+    <div class="startBtn" style="bottom:${d.inset.bottom + 32}px">
+      ${icon("play", 22, "#fff")}<span>Fillo</span>
     </div>
   </div>`
 
@@ -410,16 +410,14 @@ const css = (d) => {
              font-size:14px; font-weight:800; color:${colors.mutedForeground}; }
 
   /* ---- BookCover ---- */
-  .cover { padding:0; background:${colors.cover}; }
-  .artWrap { flex:1; position:relative; min-height:0; }
+  .cover { padding:0; position:relative; background:${colors.cover}; }
   .splashArt { position:absolute; inset:0; width:100%; height:100%; object-fit:contain; }
-  .coverFooter { display:flex; flex-direction:column; align-items:center; gap:12px;
-                 padding-top:12px; }
-  .agePill { display:flex; align-items:center; gap:4px; padding:4px 12px; border-radius:999px;
-             background:rgba(255,255,255,.18); font-size:14px; font-weight:700; color:#fff; }
-  .startBtn { display:flex; align-items:center; gap:8px; padding:16px 32px; border-radius:999px;
+  .coverScrim { position:absolute; left:0; right:0; bottom:0; height:32%;
+                background:linear-gradient(180deg,rgba(0,1,188,0) 0%,rgba(0,1,188,.92) 55%,${colors.cover} 100%); }
+  .startBtn { position:absolute; left:50%; transform:translateX(-50%);
+              display:flex; align-items:center; gap:8px; padding:16px 32px; border-radius:999px;
               background:${grad(colors.primary, "#3E9A44")}; color:#fff; font-size:20px; font-weight:800;
-              box-shadow:${shadow.md}; }
+              box-shadow:${shadow.lg}; }
 
   /* ---- Contents ---- */
   .banner { border-radius:28px; padding:16px; overflow:hidden; position:relative; margin-bottom:16px;
